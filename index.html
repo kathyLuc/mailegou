@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>麦乐购</title>
+	<!-- <link rel="stylesheet" type="text/css" href="./css/base.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/index.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="./js/index.js"></script> -->
+	<!-- <script type="text/javascript" src="./js/template-native.js"></script> -->
+	<script type="text/javascript" src="js/all.js"></script>
+	<!-- 自定义模板 -->
+	<!-- <script type="text/template" id='timeTemplate' >
+		<div class="ul selected">
+			<div class="btn">
+			<div class="next"></div>
+			<div class="prev"></div>
+			<font class="red"><%=item[0].pageIndex%></font>
+			/
+			<font class="count"><%=item[0].pageCount%></font>
+		</div>
+		<ul class="show">
+		<% for(var i = 0; i< item[0].pictureList.length; i++){ %>
+			<li>
+				<a href="javascript:;">
+					<img src="<%= item[0].pictureList[i].path %>">
+				</a>
+				<p class="name"><a href="javascript:;"><%= item[0].pictureList[i].title %></a></p>
+				<div class="price">
+					<p>￥<b class="bold"><%= item[0].pictureList[i].price %></b><s>价格<del>￥<%= item[0].pictureList[i].oldPrice %></del></s></p>
+				</div>
+				<div class="buyBtn">
+					<a href="">马上抢</a>
+				</div>
+			</li>
+		<% } %>
+		
+		</ul>
+		<div class="box_left"></div>
+		<div class="box_right"></div>
+	</div>
+
+	</script> -->
+</head>
+<body>
+
+	<!-- 刷新页面显示弹出框 -->
+	<div class="gou_mask">
+		<div class="gou_box">
+			<span class="closeWin"></span>
+			<a href="javascript:;">
+				<img src="./images/tanchukuang.png" alt="">
+			</a>
+		</div>
+	</div>
+	<!-- 购物车 -->
+	<div class="gou_cart">
+		<div class="whole">
+			<div class="bearImg">
+				<img src="./images/bearCart.png" alt="">
+			</div>
+			<div class="cart_nav">
+				<div class="cart_nav_list">
+					<ul>
+						<li><a href="javascript:;"><i class="account"></i></a></li>
+						<li class="cart-i">
+							<a href="javascript:;" class="message_list aStair">
+								<i class="cart_icon"></i>
+								<div class="span">购物车</div>
+								<span class="cart_num">0</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="cart_nav_list bot">
+					<ul>
+						<li class="kf" data-left="-225px">
+							<a href="javascript:;" >
+								<i class="wxi_icon"></i>
+							</a>
+							<div class="kfjl">客服经理</div>
+							<a href="javascript:;">
+								<i class="servi"></i>
+							</a>
+							<div class="kfjl">客服</div>
+							<div class="kfzx aStair ">
+								<p class="tactusImg">
+									<img src="./images/loginBefore.png" alt=""/>
+								</p>
+								<div class="tactus">
+									<a href="javascript:;" class="us">联系客服</a>
+								</div>
+								
+							</div>
+						</li>
+						<li data-left="-80px">
+							<a href="javascript:;">
+								<i class="collection"></i>
+							</a>
+							<div class="txt-pro aStair">我的收藏</div>
+						</li>
+						<li data-left="-80px">
+							<a href="javascript:;">
+								<i class="view"></i>
+							</a>
+							<div class="txt-pro aStair">浏览历史</div>
+						</li>
+						<li data-left="-240px">
+							<a href="javascript:;">
+								<i class="payto"></i>
+							</a>
+							<div class="module-pro aStair">
+								<div class="noneCon"><img src="./images/payto.jpg" alt=""></div>
+							</div>
+						</li>
+						<li data-left="-80px">
+							<a href="javascript:;">
+								<i class="feedicon"></i>
+							</a>
+							<div class="txt-pro aStair">反馈</div>
+						</li>
+						<li class="backTop">
+							<a href="javascript:;">
+								<i class="back-top"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="cart_main_list">
+			<!-- 加入购物车类别 -->
+			<div class="shopcar">
+				<div class="nopublic">
+					<div class="nothing">
+						<div class="onicon"></div>
+							喔，亲，您还没有添加过任何商品哦！<a href="javascript:;">去逛逛</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 头部广告 -->
+	<div class="top_banner">
+		<div class="w">
+			<a href="javascript:;">
+				<img src="./images/top_banner.jpg" alt=""/>
+				<span class="#btnHide">关闭</span>
+			</a>
+			
+		</div>
+	</div>
+	<!-- shortcut部分 -->
+	<div class="gou_shortcut">
+		<div class="w clearfix">
+			<div class="gou_shortcut_left">
+				<ul>
+					<li>
+						<a href="javascript:;" class="first"><i></i>麦购网首页</a>
+						<a href="javascript:;">请登录</a>
+						<a href="javascript:;">免费注册</a>
+					</li>
+					<li>
+						<span>其他登陆方式：</span>
+						<a href="javascript:;" class="first_icon"></a>
+						<a href="javascript:;" class="second_icon"></a>
+						<a href="javascript:;" class="third_icon"></a>
+					</li>
+					<li>
+						<span>联系客服：</span>
+						<span>400-666-6600</span>
+					</li>
+				</ul>
+			</div>	
+			<div class="gou_shortcut_right">
+				<div class="mygou fore">
+					<a href="javascript:;">我的麦乐购</a>
+					<i class="up"></i>
+					<ul>
+						<li><a href="javascript:;">我的订单</a></li>
+						<li><a href="javascript:;">我的账户</a></li>
+						<li><a href="javascript:;">麦豆兑换</a></li>
+						<li><a href="javascript:;">我的优惠劵</a></li>
+						<li><a href="javascript:;">我的收藏</a></li>
+						<li><a href="javascript:;">幸运刮刮卡</a></li>
+					</ul>
+				</div>
+				<span>|</span>
+				<div class="mygou fore_second">
+					<a href="javascript:;">收藏麦乐购</a>
+					<i class="collect"></i>
+				</div>
+				<span>|</span>
+				<div class="mygou">
+					<a href="javascript:;">药品信息</a>
+				</div>
+				<span>|</span>
+				<div class="mygou">
+					<a href="javascript:;">音乐专区</a>
+				</div>
+				<span>|</span>
+				<div class="mygou">
+					<a href="javascript:;">妈妈挣钱计划</a>
+				</div>	
+				<span>|</span>
+				<div class="mygou fore_third">
+					<a href="javascript:;">手机乐购</a>
+					<i class="tel"></i>
+					<div class="erweima">
+						<img src="./images/erweima.jpg" alt=""/>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<!-- header部分 -->
+	<div class="gou_header clearfix">
+		<div class="w">
+			<div class="search_box">
+				<a href="javascript:;" class="logo">
+					<img src="./images/logo.jpg" alt=""/>
+				</a>
+				<form action="#">
+					<input type="text" placeholder="请输入商品名称，支持拼音搜索" id="txt"/>
+					<input type="submit" value="搜索" id="sub"/>
+				</form>
+				<div class="hotword">
+					热门关键词：<a href="javascript:;">牛栏</a> <a href="javascript:;">花王</a> <a href="javascript:;">美素</a> <a href="javascript:;">爱他美</a> <a href="javascript:;">karicare</a> <a href="javascript:;"> 喜宝</a> <a href="javascript:;">swisse</a>
+				</div>
+			</div>
+			<div class="header_cd">
+				<a href="javascript:;">
+					<img src="./images/small_banner01.jpg" alt="" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- nav部分 -->
+	<div class="gou_nav w">
+		<div class="menu_all">
+			<h2>全部商品分类</h2>
+			<div class="menu_box">
+				<ul >
+					<li>
+						<i class="menu_icon1"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon2"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon3"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon4"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon5"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon6"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon7"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon8"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+					<li>
+						<i class="menu_icon9"></i>
+						<h3>
+							<a href="javascript:;">宝宝奶粉</a>
+						</h3>
+						<p>
+							<a href="javascript:;">牛奶粉</a> <a href="javascript:;">羊奶粉</a>
+						</p>
+					</li>
+				</ul>
+				<div class="menu_details">
+					<div class="details_box">
+						<p>
+							<strong>热门品牌</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌2</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌3</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌4</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌5</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌6</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌7</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌8</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+					<div class="details_box">
+						<p>
+							<strong>热门品牌9</strong>
+							<a href="javascript:;">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;" class="on">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;" class="on">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+							<a href="javascript:;">澳洲a2</a>
+							<a href="javascript:;">德国凯莉泓乐Holle</a>
+							<a href="javascript:;">日本明治</a>
+							<a href="javascript:;" class="on">荷兰牛栏Nutrilon</a>
+							<a href="javascript:;">德国爱他美Aptamil</a>
+							<a href="javascript:;">德国喜宝Hipp</a>
+							<a href="javascript:;">荷兰美素Hero Baby</a>
+							<a href="javascript:;">英国牛栏Cow＆Gate</a>
+							<a href="javascript:;">新西兰爱他美Aptamil</a>
+							<a href="javascript:;">德国特福芬Topfer</a>
+							<a href="javascript:;">英国爱他美Aptamil</a>
+							<a href="javascript:;">新西兰Karicare</a>
+						</p>
+						<p>
+							<strong>优惠套餐</strong>
+							<a href="javascript:;" class="on">买7送1</a>
+							<a href="javascript:;">4罐优惠</a>
+							<a href="javascript:;">2罐优惠</a>
+						</p>
+						<p>
+							<strong>适用年龄</strong>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;" class="on">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+							<a href="javascript:;">儿童奶粉（直邮）</a>
+						</p>
+						<p>
+							<strong>奶粉分类</strong>
+							<a href="javascript:;">牛奶粉</a>
+							<a href="javascript:;">羊奶粉</a>
+							<a href="javascript:;" class="on">有机奶粉</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;" class="on">牛乳蛋白过敏奶粉</a>
+							<a href="javascript:;">乳糖不耐受奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">孕妇奶粉</a>
+							<a href="javascript:;"> 宝宝奶粉（直邮）</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- nav -->
+		<div class="nav_main">
+			<span class="move"></span>
+			<ul class='navMain_list'>
+				<li><a href="javascript:;">首页</a></li>
+				<li><a href="javascript:;">进口奶粉</a></li>
+				<li><a href="javascript:;">整点抢</a></li>
+				<li><a href="javascript:;">神妈值得买</a></li>
+				<li>
+					<span class="hot"></span>
+					<a href="javascript:;">天天特卖</a>
+				</li>
+				<li><a href="javascript:;">正品保证</a></li>
+				<li>
+					<span class="new"></span>
+					<a href="javascript:;">海外直邮</a>
+				</li>
+				<li><a href="javascript:;">国家馆</a></li>
+			</ul>
+		</div>
+		<!-- cart -->
+		<div class="nav_cart">
+			<a href="javascript:void(0);">
+				<i></i>
+				去购物车结账
+			</a>
+		</div>	
+	</div>
+	<!-- banner 部分-->
+	<div class="gou_banner">
+		<div class="pic_opera">
+			<!-- 轮播图左边广告 -->
+			<div class="banner_ad">
+				<a href="javascript:void(0)">
+					<img src="./images/banner_ad01.jpg" alt=""/>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="./images/banner_ad02.jpg" alt=""/>
+				</a>	
+				<a href="javascript:void(0)">
+					<img src="./images/banner_ad03.jpg" alt=""/>
+				</a>
+			</div>
+			<!-- 轮播图切换按钮 -->
+			<ul class="market_btn">
+				<li class="active_btn">
+					<a href="javascript:void(0)"><img src="./images/banner_but_01.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="./images/banner_but_02.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="./images/banner_but_03.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="./images/banner_but_04.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><img src="./images/banner_but_05.jpg" alt=""></a>
+				</li>
+			</ul>			
+		</div>
+		<!-- 轮播图开始 -->
+		<div class="banner_box">
+			<ul>
+				<li class="market-silde">
+					<div class="market-pannel">
+						<a href="javascript:void(0)">
+						<img src="./images/banner_01.jpg" alt="">
+						</a>
+					</div>
+					
+				</li>
+				<li class="market-silde">
+					<div class="market-pannel">
+						<a href="javascript:void(0)">
+						<img src="./images/banner_02.jpg" alt="">
+						</a>
+					</div>
+					
+				</li>
+				<li class="market-silde">
+					<div class="market-pannel">
+						<a href="javascript:void(0)">
+						<img src="./images/banner_03.jpg" alt="">
+						</a>
+					</div>
+					
+				</li>
+				<li class="market-silde">
+					<div class="market-pannel">
+						<a href="javascript:void(0)">
+						<img src="./images/banner_04.jpg" alt="">
+						</a>
+					</div>
+					
+				</li>
+				<li class="market-silde">
+					<div class="market-pannel">
+						<a href="javascript:void(0)">
+						<img src="./images/banner_05.jpg" alt="">
+						</a>
+					</div>
+					
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<!-- main 部分 -->
+	<div class="gou_main">
+		<div class="w">
+			<!--整点抢  -->
+			<div class="conTit">
+				<h2><i class="tit_icon i_buy"></i>整点抢</h2>
+				<span>超便宜，绝对值！</span>
+				<div class="skill">
+					<span>距离本场结束还剩</span>
+					<span class="time">
+						<em class="mr3 hours">0</em>
+						<em class="hours">0</em>
+						 <i> :</i>
+						<em class="mr3 min">0</em>
+						<em class="min">0</em>
+						 <i> :</i>
+						<em class="mr3 sec">0</em>
+						<em class="mr3 sec">0</em>
+						<!-- <em class="hm">0</em> -->
+
+					</span>
+				</div>
+				<a href="javascript:;">更多></a>
+			</div>
+			<div class="timeTit">
+				<ul>
+					<li class="current" index="1">
+						<a href="javascript:void(0)" class="time1"><time>17:00</time></a>
+						<a href="javascript:void(0)">抢购进行中</a>
+						<!-- <i class="arrow_down"></i> -->
+
+					</li>
+					<li index="2">
+						<a href="javascript:void(0)" class="time1"><time>00:00</time></a>
+						<a href="javascript:void(0)">即将开抢</a>
+					</li>
+					<li index="3">
+						<a href="javascript:void(0)" class="time1"><time>09:00</time></a>
+						<a href="javascript:void(0)">即将开抢</a>
+						
+					</li>
+					<li index="4">
+						<a href="javascript:void(0)" class="time1"><time>13:00</time></a>
+						<a href="javascript:void(0)">即将开抢</a>
+					</li>
+					<li index="5">
+						<a href="javascript:void(0)" class="time1"><time>17:00</time></a>
+						<a href="javascript:void(0)">即将开抢</a>
+					</li>
+				</ul>
+			</div>
+				
+			<div class="timeCon">
+				<div class="ul selected">
+					<!-- <div class="btn">
+						<div class="next">></div>
+						<div class="prev"><</div>
+						<font class="red">1</font>
+						/
+						<font class="count">8</font>
+					</div> -->
+					<ul class="show">
+						<li>
+							<a href="javascript:;"><img class="lazy" data-original="./images/timeCon_01.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img class="lazy" data-original="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img class="lazy" data-original="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img class="lazy" data-original="./images/timeCon_04.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="box_left"></div> -->
+					<!-- <div class="box_right"></div> -->
+				</div>
+				<div class="ul">
+					<!-- <div class="btn">
+						<div class="next">></div>
+						<div class="prev"><</div>
+						<font class="red">1</font>
+						/
+						<font class="count">6</font>
+					</div> -->
+					<ul class="show">
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_04.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="box_left"></div> -->
+					<!-- <div class="box_right"></div> -->
+				</div>
+				<div class="ul">
+					<!-- <div class="btn">
+						<div class="next">></div>
+						<div class="prev"><</div>
+						<font class="red">1</font>
+						/
+						<font class="count">5</font>
+					</div> -->
+					<ul class="show">
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_04.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="box_left"></div> -->
+					<!-- <div class="box_right"></div> -->
+				</div>
+				<div class="ul">
+					<!-- <div class="btn">
+						<div class="next">></div>
+						<div class="prev"><</div>
+						<font class="red">1</font>
+						/
+						<font class="count">3</font>
+					</div> -->
+					<ul class="show">
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_01.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_04.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="">马上抢</a>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="box_left"></div> -->
+					<!-- <div class="box_right"></div> -->
+				</div>
+				<div class="ul">
+					<!-- <div class="btn">
+						<div class="next">></div>
+						<div class="prev"><</div>
+						<font class="red">1</font>
+						/
+						<font class="count">5</font>
+					</div> -->
+					<ul class="show">
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_02.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href=""><img src="./images/timeCon_03.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;"><img src="./images/timeCon_04.jpg"></a>
+							<p class="name"><a href="">美国善存Centrum 成人多种复合维生素 365+60粒家庭装（2017/3/1前可食用）（海外版）</a></p>
+							<div class="price">
+								<p>￥<b class="bold">55</b><s>价格<del>￥100</del></s></p>
+							</div>
+							<div class="buyBtn">
+								<a href="javascript:;">马上抢</a>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="box_left"></div> -->
+					<!-- <div class="box_right"></div> -->
+				</div>
+			</div>
+
+			<!-- 通栏广告 -->
+			<div class="bannerAd">
+				<a href="javascript:;"><img class="lazy" data-original="./images/bannerAd01.jpg"></a>
+				<a href="javascript:;" class="tow"><img class="lazy" data-original="./images/bannerAd02.jpg"></a>
+			</div>
+			<!-- 今天半价 -->
+			<div class="conTit halfBox">
+				<h2><i class="tit_icon i_half"></i>今天半价</h2>
+				<span>每天一换, 只卖半价</span>
+			</div>
+			<div class="tescolCon">
+				<ul class="clearfix">
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_01.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_02.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_03.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_04.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_05.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img class="lazy" data-original="./images/halfBox_01.jpg" alt="">
+							<div class="name">
+								<font>日本花王LAURIER F系列卫生巾瞬吸透气棉柔 日用25cm*18片/包*2（海外版）</font>
+							</div>
+							<p class="price">
+								￥<b class="tahoma">39</b><s>价格<del>￥78</del></s>
+							</p>
+							<p class="tescol-btn">
+								<span class="t_mun">已售 &nbsp; 10764件 </span>
+								<span class="t_btn">马上抢<i class="r_arrow"></i></span>
+							</p>
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+			<!-- 天天特卖 -->
+			<div class="conTit .saleBox">
+				<h2><i class="tit_icon i_sale"></i>天天特卖</h2>
+				<span>
+					<i>每</i>
+					<i>天</i>
+					<i>上</i>
+					<i>新</i>
+					<i>,</i>
+					<i>天</i>
+					<i>天</i>
+					<i>低</i>
+					<i>价</i>
+					<i>,</i>
+					<i>限</i>
+					<i>时</i>
+					<i>抢</i>
+					<i>购</i>
+				</span>
+				<a href="javascript:;">更多></a>
+			</div>
+			<div class="saleToday">
+				<ul class="clearfix">
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today01.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today02.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today03.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today04.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today05.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today06.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today07.jpg"  alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:;"><img class="lazy" data-original="./images/sale_today08.jpg" alt=""/></a>
+						<div class="saleTit">
+							<h3>
+								<p> 美国布朗博士喂养用品特卖</p>
+								<p class="limit">
+									<i class="icon_time"></i>
+									剩余
+									<span class="lefttime"></span>
+								</p>
+							</h3>
+							<span>
+								<b class="tahoma">6.5</b>
+								折起
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 猜你喜欢 -->
+			<div class="conTit like">
+				<h2><i class="tit_icon i_like"></i>猜你喜欢</h2>
+				<span>千万妈妈共同的选择，推荐给更多妈妈</span>
+				<div class="body_boy">
+				    <a href="javascript:;">
+				    	<i class="i_editTxt"></i>
+				    	<span class="text">填写我家宝贝档案</span>
+				    	<span class="arrow-r"></span>
+				    </a>
+				    <font>填写即送<b>20</b>麦豆</font>
+				</div>
+			</div>
+			<div class="guess">
+				<div class="ge_btn">
+					<div class="next"></div>
+					<div class="prev"></div>
+					<font class="red">1</font>
+					/
+					<font class="count">3</font>
+				</div>
+				<span class="ge_prev"></span>
+				<span class="ge_next"></span>
+				<div class="ge_main">
+					<div class="main_box clearfix">
+						<ul class="clearfix">
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main01.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main03.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main05.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main06.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main07.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main08.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+						</ul>
+						<ul class="clearfix">
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main03.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main05.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main06.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main07.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main08.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+						</ul>
+						<ul class="clearfix">
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main03.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main03.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main04.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main05.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main06.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main07.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main08.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="./images/gu_main02.jpg" alt=""/>
+									<div class="ge_name">
+										【自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机
+									</div>
+									<p class="gu_price">
+										￥<b class="tahoma">46</b><s>价格<del>￥60</del></s>
+									</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 楼层 -->
+			<div class="floor">
+				<!-- 1楼宝宝奶粉 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit0">
+							<b class="floor0">1F</b>宝宝奶粉
+						</h3>
+						<div class="subCate floor0">
+							<a href="javascript:;" class="on">牛奶粉</a>
+							<a href="javascript:;" class="on">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midFir01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 通栏广告 -->
+				<div class="article mt25">
+					<a href="javascript:;">
+						<img class="lazy" data-original="./images/ad.jpg" alt="">
+					</a>
+				</div>
+				<!-- 2楼宝宝辅食 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit1">
+							<b class="floor1">2F</b>宝宝辅食
+						</h3>
+						<div class="subCate sc_floor1">
+							<a href="javascript:;" class="on1">牛奶粉</a>
+							<a href="javascript:;" class="on1">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on1">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/2floor01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<div class="article mt25">
+					<a href="javascript:;">
+						<img class="lazy" data-original="./images/ad02.jpg" alt="">
+					</a>
+				</div>
+				<!-- 3楼营养健康 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit2">
+							<b class="floor2">3F</b>营养健康
+						</h3>
+						<div class="subCate sc_floor2">
+							<a href="javascript:;" class="on2">牛奶粉</a>
+							<a href="javascript:;" class="on2">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on2">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor03.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 4楼宝宝用品 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit3">
+							<b class="floor3">4F</b>宝宝用品
+						</h3>
+						<div class="subCate sc_floor3">
+							<a href="javascript:;" class="on3">牛奶粉</a>
+							<a href="javascript:;" class="on3">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on3">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor_04.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 5楼宝宝服饰 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit4">
+							<b class="floor4">5F</b>宝宝服饰
+						</h3>
+						<div class="subCate sc_floor4">
+							<a href="javascript:;" class="on4">牛奶粉</a>
+							<a href="javascript:;" class="on4">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on4">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor_05.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 6楼宝宝玩具 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit5">
+							<b class="floor5">6F</b>宝宝服饰
+						</h3>
+						<div class="subCate sc_floor5">
+							<a href="javascript:;" class="on5">牛奶粉</a>
+							<a href="javascript:;" class="on5">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on5">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor_06.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 7楼宝宝玩具 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit6">
+							<b class="floor6">7F</b>宝宝服饰
+						</h3>
+						<div class="subCate sc_floor6">
+							<a href="javascript:;" class="on6">牛奶粉</a>
+							<a href="javascript:;" class="on6">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on6">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor_07.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img src="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 8楼化妆品 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit7">
+							<b class="floor7">8F</b>化妆品
+						</h3>
+						<div class="subCate sc_floor7">
+							<a href="javascript:;" class="on7">牛奶粉</a>
+							<a href="javascript:;" class="on7">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on7">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/floor_08.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- 9楼家居生活 -->
+				<div class="layer">
+					<div class="left_box">
+						<h3 class="floorTit8">
+							<b class="floor8">9F</b>家居生活
+						</h3>
+						<div class="subCate sc_floor8">
+							<a href="javascript:;" class="on8">牛奶粉</a>
+							<a href="javascript:;" class="on8">羊奶粉</a>
+							<a href="javascript:;">有机奶粉</a>
+							<a href="javascript:;">早产儿奶粉</a>
+							<a href="javascript:;">乳糖不耐受</a>
+							<a href="javascript:;" class="on8">牛乳过敏</a>
+							<a href="javascript:;">益生菌奶粉</a>
+							<a href="javascript:;"></a>
+							<a href="javascript:;">0-6个月</a>
+							<a href="javascript:;">6-12个月</a>
+							<a href="javascript:;">1-2岁</a>
+							<a href="javascript:;">2-3岁</a>
+							<a href="javascript:;">3-6岁</a>
+							<a href="javascript:;">儿童奶粉</a>
+						</div>
+						<div class="brand brTab">
+							<span class="next"></span>
+							<span class="prev"></span>
+							<div class="br_b">
+								<ul>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b05.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b06.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b07.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b08.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+									<li>
+										<a href="javascript:;"><img src="./images/br_b01.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b02.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b03.jpg"></a>
+										<a href="javascript:;"><img src="./images/br_b04.jpg"></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="midFir">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/fllor_09.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midFir02.jpg" alt="">
+						</a>
+					</div>
+					<div class="midSec">
+						<a href="javascript:;" class="top_img">
+							<img class="lazy" data-original="./images/midSec01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="bot_img mt10">
+							<img class="lazy" data-original="./images/midSec02.jpg" alt="">
+						</a>
+					</div>
+					<div class="rightCon">
+						<a href="javascript:;" class="a_img">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+						<a href="javascript:;" class="a_img mt10">
+							<img class="lazy" data-original="./images/rightCon01.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 晒单区 -->
+			<div class="article_bot mt25 clearfix">
+				<div class="master">
+					<div class="conTit">
+						<h2>达人推介</h2>
+						<span class="subTit">超级达人的 “购”秘籍</span>
+					</div>
+					<div class="mastCon">
+						<ul>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/mastCon_01.jpg" alt=""/>
+								</a>
+								<p class="name" title="宝宝零食“环游记” 带着嘴巴去旅行">宝宝零食“环游记” 带着嘴巴去旅行</p>
+								<p><a href="javascipt:;" title="很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!">很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!</a></p>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/mastCon_02.jpg" alt=""/>
+								</a>
+								<p class="name" title="宝宝皮肤擦啥呦？护肤有讲究">宝宝皮肤擦啥呦？护肤有讲究</p>
+								<p><a href="javascipt:;" title="很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!">很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!</a></p>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/mastCon03.jpg" alt=""/>
+								</a>
+								<p class="name" title="宝宝皮肤擦啥呦？护肤有讲究">宝宝皮肤擦啥呦？护肤有讲究</p>
+								<p><a href="javascipt:;" title="很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!">很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!</a></p>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img class="lazy" data-original="./images/mastCon_04.jpg" alt=""/>
+								</a>
+								<p class="name" title="宝宝皮肤擦啥呦？护肤有讲究">宝宝皮肤擦啥呦？护肤有讲究</p>
+								<p><a href="javascipt:;" title="很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!">很多妈妈不敢给宝宝吃零食，担心零食的营养价值不够，或影响宝宝吃正餐的效果。其实，只要选对健康小零食，营养和健康可以兼顾的哦!</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sunArea">
+					<div class="conTit">
+						<h2>晒单区</h2>
+						<span class="subTit">分享您购物的喜悦！</span>
+						<div class="prev"></div>
+						<div class="next"></div>
+						
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            				</div>
+					<div class="sunaCon">
+						<ul>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_01.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_02.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_03.png" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_04.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_05.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_06.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_07.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_08.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_01.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+							<li>
+								<a href="javascipt:;">
+									<img src="./images/sunaCon_02.jpg" alt="">
+									<p class="name">美国嘉宝Gerber黄桃星星泡芙（8个月以上）42g</p>
+								</a>
+								<p class="uesInfo mt10">
+									<span class="lv">v4</span>砖石会员
+								</p>
+								<p class="explain mt10">BB一直都很喜欢吃</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>	
+			<!-- 通栏 -->
+			<div class="article mt25">
+				<div class="botCol">
+					<div class="colist">
+						<div class="icon fotbg1"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+					<div class="colist">
+						<div class="icon fotbg2"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+					<div class="colist">
+						<div class="icon fotbg3"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+					<div class="colist">
+						<div class="icon fotbg4"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+					<div class="colist">
+						<div class="icon fotbg5"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+					<div class="colist">
+						<div class="icon fotbg6"></div>
+						<ul>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">有机奶粉</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">乳糖不耐受</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+								<li><a href="javascript:;">牛奶粉</a></li>
+							</ul>
+							<div class="sup_btn">
+								<a href="javascript:;">宝宝奶粉</a>
+							</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- 底部背景图 -->
+			<div class="footbg"></div>
+	</div>
+	<!-- 侧边导航栏 -->
+	<div class="mui-lift">
+		<div>
+			<a href="javascript:;">
+				<div class="snbg1"></div>
+				<font>宝宝奶粉</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg2"></div>
+				<font>宝宝辅食</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg3"></div>
+				<font>营养健康</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg4"></div>
+				<font>宝宝用品</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg5"></div>
+				<font>宝宝服饰</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg6"></div>
+				<font>宝宝玩具</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg7"></div>
+				<font>孕产用品</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg8"></div>
+				<font>化妆品</font>
+			</a>
+			<a href="javascript:;">
+				<div class="snbg9"></div>
+				<font>居家生活</font>
+			</a>
+		</div>
+		
+	</div>
+	<!-- footer部分 -->
+	<div class="footer">
+		<div class="w">
+			<div class="promise clearfix">
+				<dl class="pro1">
+					<span class="i1"></span>
+					<dt>海外采购</dt>
+					<dd>精选海外优质品牌</dd>
+				</dl>
+				<dl class="pro2">
+					<span class="i2"></span>
+					<dt>国内外三重检疫</dt>
+					<dd>严把质量关 无忧购物</dd>
+				</dl>
+				<dl class="pro2">
+					<span class="i3"></span>
+					<dt>中华保险承保</dt>
+					<dd>正品保证</dd>
+				</dl>
+				<dl class="pro2">
+					<span class="i4"></span>
+					<dt>专属育婴师服务</dt>
+					<dd>一对一专业育婴指导</dd>
+				</dl>
+				<dl class="pro3">
+					<span class="i5"></span>
+					<dt>满188元包邮</dt>
+					<dd>尊享免费航空快递</dd>
+				</dl>
+			</div>
+			<div class="forLink">
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="javascript:;">为什么选麦乐购</a></dd>
+					<dd><a href="javascript:;">购物流程</a></dd>
+					<dd><a href="javascript:;">正品保证</a></dd>
+					<dd><a href="javascript:;">手机麦乐购</a></dd>
+				</dl>
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="javascript:;">为什么选麦乐购</a></dd>
+					<dd><a href="javascript:;">购物流程</a></dd>
+					<dd><a href="javascript:;">正品保证</a></dd>
+					<dd><a href="javascript:;">手机麦乐购</a></dd>
+				</dl>
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="javascript:;">为什么选麦乐购</a></dd>
+					<dd><a href="javascript:;">购物流程</a></dd>
+					<dd><a href="javascript:;">正品保证</a></dd>
+					<dd><a href="javascript:;">手机麦乐购</a></dd>
+				</dl>
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="javascript:;">为什么选麦乐购</a></dd>
+					<dd><a href="javascript:;">购物流程</a></dd>
+					<dd><a href="javascript:;">正品保证</a></dd>
+					<dd><a href="javascript:;">手机麦乐购</a></dd>
+				</dl>
+				<dl>
+					<dt>购物指南</dt>
+					<dd><a href="javascript:;">为什么选麦乐购</a></dd>
+					<dd><a href="javascript:;">购物流程</a></dd>
+					<dd><a href="javascript:;">正品保证</a></dd>
+					<dd><a href="javascript:;">手机麦乐购</a></dd>
+				</dl>
+				<div class="gouApp">
+					<h3>手机麦乐购</h3>
+					<img class="lazy" data-original="./images/mlgAPP.jpg" alt="">
+				</div>
+			</div>	
+		</div>
+		
+		<div class="about">
+			<p class="abLink">
+				<a href="javascript:;">关于麦乐购</a>
+				<span>|</span>
+				<a href="javascript:;">保税店专区</a>
+				<span>|</span>
+				<a href="javascript:;">服务条款</a>
+				<span>|</span>
+				<a href="javascript:;">商户合作</a>
+				<span>|</span>
+				<a href="javascript:;">O2O合作</a>
+				<span>|</span>
+				<a href="javascript:;">联系我们</a>
+				<span>|</span>
+				<a href="javascript:;">友情链接</a>
+				<span>|</span>
+				<a href="javascript:;">诚聘英才</a>
+				<span>|</span>
+				<a href="javascript:;">手机麦乐购</a>
+				<span>|</span>
+				<a href="javascript:;">意见建议</a>
+				<span>|</span>
+				<a href="javascript:;">媒体报道</a>
+			</p>
+			<p class="mt10">
+				<a href="javascript:;" class="bottom01"><img src="./images/gonganbeian.png">京公网安备：11010102000812号</a>    | 中华保险保单号：011644014602050D000001 | 中华人民共和国出版物经营许可证编号：150023 | 广电制作经营许可证：(京)字第06356号
+			</p>
+			<p>网络文化经营许可证：京网文(2016)4048-509号 | 食品经营许可证编号：JY11101070034785 | 食品卫生许可证编号：110101_JX0020 | 互联网药品信息服务证书编号：(京)-2016-0095</p>
+			<p>Copyright 2006 - 2016 北京麦乐购科技有限公司版权所有 | 经营许可证编号：京ICP证150027号 | 营业执照：911101010672694772 |  京ICP备14022296号 | 中国服务热线：400-666-6600</p>
+			<aside class="newcor">
+				<a href="javascript:;" title="正品保证"><img src="./images/foor01.jpg"></a>
+				<a href="javascript:;" title="正品保证"><img src="./images/floordi03.jpg"></a>
+				<a href="javascript:;" title="正品保证"><img src="./images/floor02.jpg"></a>
+				<a href="javascript:;" title="正品保证"><img src="./images/floordi04.jpg"></a>
+			</aside>
+		</div>
+	</div>
+
+
+</body>
+<!-- <script type="text/javascript" src="./js/main.js"></script> -->
+<!-- 轮播插件 -->
+<!-- <link rel="stylesheet" type="text/css" href="./css/flexslider.css"> -->
+<!-- <script type="text/javascript" src="./js/jquery.flexslider.js"></script> -->
+<!-- 懒加载技术 -->
+<script type="text/javascript" src="./js/jquery.lazyload.min.js"></script>
+
+</html>
